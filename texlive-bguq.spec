@@ -1,11 +1,11 @@
-# revision 27140
+# revision 27401
 # category Package
 # catalog-ctan /fonts/bguq
-# catalog-date 2012-07-24 10:27:04 +0200
+# catalog-date 2012-08-14 15:05:39 +0200
 # catalog-license lppl
-# catalog-version 0.3
+# catalog-version 0.4
 Name:		texlive-bguq
-Version:	0.3
+Version:	0.4
 Release:	1
 Summary:	Improved quantifier stroke for Begriffsschrift packages
 Group:		Publishing
@@ -82,7 +82,7 @@ included as an example of implementation.
 %{_texmfdistdir}/tex/latex/bguq/bguq.sty
 %doc %{_texmfdistdir}/doc/fonts/bguq/INSTALL.txt
 %doc %{_texmfdistdir}/doc/fonts/bguq/Makefile
-%doc %{_texmfdistdir}/doc/fonts/bguq/README.txt
+%doc %{_texmfdistdir}/doc/fonts/bguq/README
 %doc %{_texmfdistdir}/doc/fonts/bguq/bguq-doc.pdf
 #- source
 %doc %{_texmfdistdir}/source/fonts/bguq/bguq.dtx
