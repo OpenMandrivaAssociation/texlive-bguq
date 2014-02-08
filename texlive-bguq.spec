@@ -6,7 +6,7 @@
 # catalog-version 0.3
 Name:		texlive-bguq
 Version:	0.3
-Release:	1
+Release:	2
 Summary:	Improved quantifier stroke for Begriffsschrift packages
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/bguq
