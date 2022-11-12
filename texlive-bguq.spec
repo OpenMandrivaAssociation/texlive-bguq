@@ -1,19 +1,13 @@
-# revision 27401
-# category Package
-# catalog-ctan /fonts/bguq
-# catalog-date 2012-08-14 15:05:39 +0200
-# catalog-license lppl
-# catalog-version 0.4
 Name:		texlive-bguq
-Version:	0.4
-Release:	11
+Version:	27401
+Release:	1
 Summary:	Improved quantifier stroke for Begriffsschrift packages
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/bguq
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.r27401.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.doc.r27401.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.source.r27401.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -29,12 +23,12 @@ used by other packages which implement the Begriffsschrift. An
 included as an example of implementation.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -90,7 +84,8 @@ included as an example of implementation.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
