@@ -3,7 +3,7 @@ Version:	27401
 Release:	2
 Summary:	Improved quantifier stroke for Begriffsschrift packages
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/bguq
+URL:		https://www.ctan.org/tex-archive/fonts/bguq
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.doc.r%{version}.tar.xz
