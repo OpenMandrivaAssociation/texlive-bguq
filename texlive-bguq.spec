@@ -1,94 +1,28 @@
-Name:		texlive-bguq
-Version:	27401
-Release:	2
+%global tl_name bguq
+%global tl_revision 27401
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.4
+Release:	%{tl_revision}.1
 Summary:	Improved quantifier stroke for Begriffsschrift packages
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/bguq
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.source.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bguq.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The font contains a single character: the Begriffsschrift
-quantifier (in several sizes), as used to set the
-Begriffsschrift (concept notation) of Frege. The font is not
-intended for end users; instead it is expected that it will be
-used by other packages which implement the Begriffsschrift. An
-(unofficial) modified version of Josh Parsons' begriff is
-included as an example of implementation.
+The font contains a single character: the Begriffsschrift quantifier (in
+several sizes), as used to set the Begriffsschrift (concept notation) of
+Frege. The font is not intended for end users; instead it is expected
+that it will be used by other packages which implement the
+Begriffsschrift. An (unofficial) modified version of Josh Parsons'
+begriff is included as an example of implementation.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/map/dvips/bguq/bguq.map
-%{_texmfdistdir}/fonts/source/public/bguq/bguq.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t04.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t05.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t06.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t07.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t08.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t09.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t10.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t11.mf
-%{_texmfdistdir}/fonts/source/public/bguq/bguq10t12.mf
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t04.tfm
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t05.tfm
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t06.tfm
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t07.tfm
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t08.tfm
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t09.tfm
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t10.tfm
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t11.tfm
-%{_texmfdistdir}/fonts/tfm/public/bguq/bguq10t12.tfm
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t04.pfb
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t05.pfb
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t06.pfb
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t07.pfb
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t08.pfb
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t09.pfb
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t10.pfb
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t11.pfb
-%{_texmfdistdir}/fonts/type1/public/bguq/bguq10t12.pfb
-%{_texmfdistdir}/tex/latex/bguq/Ubguq04.fd
-%{_texmfdistdir}/tex/latex/bguq/Ubguq05.fd
-%{_texmfdistdir}/tex/latex/bguq/Ubguq06.fd
-%{_texmfdistdir}/tex/latex/bguq/Ubguq07.fd
-%{_texmfdistdir}/tex/latex/bguq/Ubguq08.fd
-%{_texmfdistdir}/tex/latex/bguq/Ubguq09.fd
-%{_texmfdistdir}/tex/latex/bguq/Ubguq10.fd
-%{_texmfdistdir}/tex/latex/bguq/Ubguq11.fd
-%{_texmfdistdir}/tex/latex/bguq/Ubguq12.fd
-%{_texmfdistdir}/tex/latex/bguq/begriff-bguq.sty
-%{_texmfdistdir}/tex/latex/bguq/bguq.cfg
-%{_texmfdistdir}/tex/latex/bguq/bguq.sty
-%doc %{_texmfdistdir}/doc/fonts/bguq/INSTALL.txt
-%doc %{_texmfdistdir}/doc/fonts/bguq/Makefile
-%doc %{_texmfdistdir}/doc/fonts/bguq/README
-%doc %{_texmfdistdir}/doc/fonts/bguq/bguq-doc.pdf
-#- source
-%doc %{_texmfdistdir}/source/fonts/bguq/bguq.dtx
-%doc %{_texmfdistdir}/source/fonts/bguq/bguq.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
